@@ -14,6 +14,8 @@ body {
     width: 1070px;
     height: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 header {
@@ -65,4 +67,10 @@ header img {
 
 .cd span.year {
     color: grey;
+}
+
+.type {
+    width: 100px;
+    height: 20px;
+    place-self: center;
 }

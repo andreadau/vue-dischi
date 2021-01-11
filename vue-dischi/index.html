@@ -13,12 +13,16 @@
             <header>
                 <div class="container">
                     <img src="logo.png" alt="logo" />
+                    <select class="type">
+                    <option v-for="option in options" :value="option.value">
+                        {{ option.text }}
+                      </option>
+                    </select>
                 </div>
             </header>
-    
             <div class="cds-container container">
                 <!-- Disco ad esempio -->
-                <div class="cd" v-for="(artists,index) in artist[0]">
+                <div class="cd" v-for="(artists,index) in artist">
                     <img :src="artists.poster" alt="">
                     <h3>{{artists.title}}</h3>
                     <span class="author">{{artists.author}}</span>

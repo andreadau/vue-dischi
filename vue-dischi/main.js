@@ -8,17 +8,26 @@ let vm = new Vue({
 	el:"#app",
 	data: {
 		artist: [],
+		selected:"",
+		options: [
+			{ text: 'Rock', value: 'Rock' },
+			{ text: 'Pop', value: 'Pop' },
+			{ text: 'Metal', value: 'Metal' },
+			{ text: 'Jazz', value: 'Jazz' }
+		  ]
 	},
 	methods: {
 		getArtist(){
 			axios.get("https://flynn.boolean.careers/exercises/api/array/music")
 			.then(response => {
-				let album = response.data.response;
-				this.artist.push(album);
+				this.artist = response.data.response;
 			});
 		}
 	},		
 	mounted(){
 		this.getArtist();
-	}
+	},
+	computed: {
+
+	},
 });
